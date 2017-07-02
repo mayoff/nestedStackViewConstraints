@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sgW-oP-J2b">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Fixed-->
+        <scene sceneID="cIt-nl-Cta">
+            <objects>
+                <viewController title="Fixed" id="FET-A2-qxN" customClass="ViewController" customModule="nestedStackViews" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tZd-xQ-rTo"/>
+                        <viewControllerLayoutGuide type="bottom" id="bhA-T4-pmu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fc6-Xn-t0s">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="cvs-fM-evk">
+                                <rect key="frame" x="31.5" y="178.5" width="257.5" height="123.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2E-pp-gir">
+                                        <rect key="frame" x="39.5" y="0.0" width="179" height="30"/>
+                                        <state key="normal" title="Top Button of Outer Stack"/>
+                                        <connections>
+                                            <action selector="buttonWasTapped" destination="FET-A2-qxN" eventType="touchUpInside" id="8fY-bG-Hme"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w7N-80-Y2q">
+                                        <rect key="frame" x="0.0" y="42" width="257.5" height="49"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="maS-6g-7gc">
+                                                <rect key="frame" x="0.0" y="0.0" width="257.5" height="49"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="800" text="Top Label of Inner Stack" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCD-8V-Q1G">
+                                                        <rect key="frame" x="36" y="0.0" width="185.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="800" text="Bottom Label of Inner Stack" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5we-Ru-LaW">
+                                                        <rect key="frame" x="22.5" y="28.5" width="212.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="maS-6g-7gc" secondAttribute="trailing" id="e16-VN-kkG"/>
+                                            <constraint firstItem="maS-6g-7gc" firstAttribute="top" secondItem="w7N-80-Y2q" secondAttribute="top" id="rmy-1W-z0v"/>
+                                            <constraint firstAttribute="bottom" secondItem="maS-6g-7gc" secondAttribute="bottom" priority="800" id="sLb-T3-cdg"/>
+                                            <constraint firstItem="maS-6g-7gc" firstAttribute="leading" secondItem="w7N-80-Y2q" secondAttribute="leading" id="xm3-rm-gOg"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottom Label of Outer Stack" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jc-Ts-dYc">
+                                        <rect key="frame" x="20" y="103" width="217.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cvs-fM-evk" firstAttribute="centerX" secondItem="fc6-Xn-t0s" secondAttribute="centerX" id="bnj-y0-r7F"/>
+                            <constraint firstItem="cvs-fM-evk" firstAttribute="centerY" secondItem="fc6-Xn-t0s" secondAttribute="centerY" id="mOH-ob-dRY"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Fixed" id="MNC-Uf-clA"/>
+                    <connections>
+                        <outlet property="innerView" destination="w7N-80-Y2q" id="X1a-eJ-0mc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q2k-BC-Rc3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-51" y="638"/>
+        </scene>
+        <!--Broken-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Broken" id="BYZ-38-t0r" customClass="ViewController" customModule="nestedStackViews" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="jPj-03-s7Q">
+                                <rect key="frame" x="51.5" y="178.5" width="217.5" height="123.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYr-hQ-HHw">
+                                        <rect key="frame" x="19.5" y="0.0" width="179" height="30"/>
+                                        <state key="normal" title="Top Button of Outer Stack"/>
+                                        <connections>
+                                            <action selector="buttonWasTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ow4-e3-2ay"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nto-kn-Gh6">
+                                        <rect key="frame" x="0.0" y="42" width="217.5" height="49"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Label of Inner Stack" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEr-kw-hNz">
+                                                <rect key="frame" x="16" y="0.0" width="185.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottom Label of Inner Stack" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3en-QR-M5i">
+                                                <rect key="frame" x="2.5" y="28.5" width="212.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottom Label of Outer Stack" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvA-4W-tdU">
+                                        <rect key="frame" x="0.0" y="103" width="217.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="nto-kn-Gh6" firstAttribute="width" secondItem="jPj-03-s7Q" secondAttribute="width" id="Y3X-jF-nnn"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jPj-03-s7Q" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="avv-iJ-K4N"/>
+                            <constraint firstItem="jPj-03-s7Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nrU-Vq-5uT"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Broken" id="2BQ-uT-0il"/>
+                    <connections>
+                        <outlet property="innerView" destination="nto-kn-Gh6" id="6c0-1X-tvw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-49" y="-48"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="lxg-0s-2i6">
+            <objects>
+                <tabBarController id="sgW-oP-J2b" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="WHO-QE-rgS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="P6M-Jh-LYl"/>
+                        <segue destination="FET-A2-qxN" kind="relationship" relationship="viewControllers" id="8zO-Yd-RwC"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Erm-aB-vId" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-983" y="335"/>
+        </scene>
+    </scenes>
+</document>
